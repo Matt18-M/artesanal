@@ -2,12 +2,17 @@ package com.krakedev.artesanal;
 
 public class Maquina {
 
-	private String codigo; // agregado el codigo
+	private String codigo;
 	private String nombreCerveza;
 	private String descripcion;
 	private double precioPorMl;
 	private double capacidadMaxima;
 	private double cantidadActual;
+	
+	public Maquina () {
+		
+	}
+	
 
 	public Maquina(String codigo, String nombreCerveza, String descripcion, double precioPorMl, double capacidadMaxima) {
 		this.codigo = codigo;

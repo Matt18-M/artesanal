@@ -105,4 +105,37 @@ public class NegocioMejorado {
         }
         return null;
     }
+    
+    
+ 
+    public void registrarConsumo(Cliente cliente, double valor) {
+        if (cliente != null) {
+            cliente.setTotalConsumido(cliente.getTotalConsumido() + valor);
+        }
+    }
+
+ 
+    public double consumirCerveza(int codigoCliente, String codigoMaquina, double cantidad) {
+        Maquina maquina = recuperarMaquina(codigoMaquina);
+        Cliente cliente = buscarClientePorCodigo(codigoCliente);
+        
+        if (maquina == null || cliente == null) {
+            return 0;
+        }
+        
+        double valor = maquina.servirCerveza(cantidad);
+        if (valor > 0) {
+            registrarConsumo(cliente, valor);
+        }
+        return valor;
+    }
+
+
+    public double consultarValorVendido() {
+        double total = 0;
+        for (Cliente cliente : clientes) {
+            total += cliente.getTotalConsumido();
+        }
+        return total;
+    }
 }

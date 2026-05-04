@@ -91,6 +91,7 @@ public class Maquina {
 			return true;
 
 		} else {
+			System.out.println("===Limite superado===");
 			return false;
 		}
 	}

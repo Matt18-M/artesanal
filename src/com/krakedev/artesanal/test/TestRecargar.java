@@ -14,22 +14,22 @@ public class TestRecargar {
 		rubia.imprimir();
 
 		System.out.println("---------RECARGA 1--------");
-		resultado = rubia.recargarCerveza(3000);
+		resultado = rubia.recargarCerveza(1000);
 		System.out.println("Se recargo correctamente? " + resultado);
 		rubia.imprimir();
 		
 		System.out.println("---------RECARGA 2--------");
-		resultado = rubia.recargarCerveza(2000);
+		resultado = rubia.recargarCerveza(1000);
 		System.out.println("Se recargo correctamente? " + resultado);
 		rubia.imprimir();
 
 		System.out.println("---------RECARGA 3--------");
-		resultado = rubia.recargarCerveza(2000);
+		resultado = rubia.recargarCerveza(800);
 		System.out.println("Se recargo correctamente? " + resultado);
 		rubia.imprimir();
 		
 		System.out.println("---------RECARGA 4--------");
-		resultado = rubia.recargarCerveza(1000);
+		resultado = rubia.recargarCerveza(11100);
 		System.out.println("Se recargo correctamente? " + resultado);
 		rubia.imprimir();
 	}

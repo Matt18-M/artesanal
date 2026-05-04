@@ -6,7 +6,7 @@ public class NegocioMejorado {
 
 	private ArrayList<Maquina> maquinas;
     private int ultimoCodigo = 100;
-    private ArrayList<Cliente> clientes;
+    private ArrayList<Cliente> clientes = new ArrayList<>();
     
     
 
@@ -32,7 +32,16 @@ public class NegocioMejorado {
     }
     
 
-    public String generarCodigo() {
+    public ArrayList<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(ArrayList<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+
+	
+	public String generarCodigo() {
         int numero = (int) (Math.random() * 100) + 1;
         return "M-" + numero;
     }
@@ -75,5 +84,25 @@ public class NegocioMejorado {
         cliente.setCodigo(ultimoCodigo);
         ultimoCodigo++;
         clientes.add(cliente);
+    }
+    
+    
+    public Cliente buscarClientePorCedula(String cedula) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getCedula().equals(cedula)) {
+                return cliente;
+            }
+        }
+        return null;
+    }
+
+    
+    public Cliente buscarClientePorCodigo(int codigo) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getCodigo() == codigo) {
+                return cliente;
+            }
+        }
+        return null;
     }
 }

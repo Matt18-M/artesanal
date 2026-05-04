@@ -6,6 +6,9 @@ public class NegocioMejorado {
 
 	private ArrayList<Maquina> maquinas;
     private int ultimoCodigo = 100;
+    private ArrayList<Cliente> clientes;
+    
+    
 
     public NegocioMejorado() {
         this.maquinas = new ArrayList<>();
@@ -64,5 +67,13 @@ public class NegocioMejorado {
             }
         }
         return null;
+    }
+    
+    
+    public void registrarCliente(String nombre, String cedula) {
+        Cliente cliente = new Cliente(nombre, cedula);
+        cliente.setCodigo(ultimoCodigo);
+        ultimoCodigo++;
+        clientes.add(cliente);
     }
 }
